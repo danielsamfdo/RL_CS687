@@ -1,0 +1,8 @@
+/Applications/CLion.app/Contents/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DUSE_MULTITHREADING=ON -DDISPLAY_GRAPHICS=ON -DCMAKE_CXX_COMPILER=/usr/local/bin/g++-7 -DCMAKE_C_COMPILER=/usr/local/bin/gcc-7 -G "CodeBlocks - Unix Makefiles" /Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3
+Found X11
+-- X11_FOUND = 1
+-- X11_INCLUDE_DIR = /usr/local/include
+-- X11_LIBRARIES = /usr/X11R6/lib/libSM.dylib;/usr/X11R6/lib/libICE.dylib;/usr/X11R6/lib/libX11.dylib;/usr/X11R6/lib/libXext.dylib
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/build/Clion/Debug

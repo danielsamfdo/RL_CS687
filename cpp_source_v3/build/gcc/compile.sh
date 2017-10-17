@@ -1,0 +1,1 @@
+g++ ../../src/*.cpp ../../src/agents/*.cpp ../../src/bases/*.cpp ../../src/environments/*.cpp ../../src/experimental/*.cpp ../../src/experimental/CMPSCI687/*.cpp ../../src/other/*.cpp ../../src/policies/*.cpp -std=c++11 -fopenmp -I../../include -I../../header -D _USE_MULTITHREADING -O3 -o RLCPP

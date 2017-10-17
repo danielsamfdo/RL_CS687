@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="RLCPP"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/build/Clion/Debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/build/Clion/Debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/build/Clion/Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/build/Clion/Debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/build/Clion/Debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/build/Clion/Debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/build/Clion/Debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/build/Clion/Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/build/Clion/Debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/build/Clion/Debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/build/Clion/Debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/build/Clion/Debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/build/Clion/Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/build/Clion/Debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/build/Clion/Debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="RLCPP">
+				<Option output="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/build/Clion/Debug/RLCPP" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/build/Clion/Debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D_USE_MULTITHREADING"/>
+					<Add option="-D_DISPLAY_GRAPHICS"/>
+					<Add directory="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/header"/>
+					<Add directory="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/gcc/7.2.0/lib/gcc/7/gcc/x86_64-apple-darwin16.7.0/7.2.0/../../../../../../include/c++/7.2.0"/>
+					<Add directory="/usr/local/Cellar/gcc/7.2.0/lib/gcc/7/gcc/x86_64-apple-darwin16.7.0/7.2.0/../../../../../../include/c++/7.2.0/x86_64-apple-darwin16.7.0"/>
+					<Add directory="/usr/local/Cellar/gcc/7.2.0/lib/gcc/7/gcc/x86_64-apple-darwin16.7.0/7.2.0/../../../../../../include/c++/7.2.0/backward"/>
+					<Add directory="/usr/local/Cellar/gcc/7.2.0/lib/gcc/7/gcc/x86_64-apple-darwin16.7.0/7.2.0/include"/>
+					<Add directory="/usr/local/Cellar/gcc/7.2.0/lib/gcc/7/gcc/x86_64-apple-darwin16.7.0/7.2.0/include-fixed"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/build/Clion/Debug/Makefile&quot;  VERBOSE=1 RLCPP"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/build/Clion/Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/build/Clion/Debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/build/Clion/Debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="RLCPP/fast">
+				<Option output="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/build/Clion/Debug/RLCPP" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/build/Clion/Debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D_USE_MULTITHREADING"/>
+					<Add option="-D_DISPLAY_GRAPHICS"/>
+					<Add directory="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/header"/>
+					<Add directory="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/gcc/7.2.0/lib/gcc/7/gcc/x86_64-apple-darwin16.7.0/7.2.0/../../../../../../include/c++/7.2.0"/>
+					<Add directory="/usr/local/Cellar/gcc/7.2.0/lib/gcc/7/gcc/x86_64-apple-darwin16.7.0/7.2.0/../../../../../../include/c++/7.2.0/x86_64-apple-darwin16.7.0"/>
+					<Add directory="/usr/local/Cellar/gcc/7.2.0/lib/gcc/7/gcc/x86_64-apple-darwin16.7.0/7.2.0/../../../../../../include/c++/7.2.0/backward"/>
+					<Add directory="/usr/local/Cellar/gcc/7.2.0/lib/gcc/7/gcc/x86_64-apple-darwin16.7.0/7.2.0/include"/>
+					<Add directory="/usr/local/Cellar/gcc/7.2.0/lib/gcc/7/gcc/x86_64-apple-darwin16.7.0/7.2.0/include-fixed"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/build/Clion/Debug/Makefile&quot;  VERBOSE=1 RLCPP/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/build/Clion/Debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/build/Clion/Debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/build/Clion/Debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/src/agents/Agent.cpp">
+			<Option target="RLCPP"/>
+		</Unit>
+		<Unit filename="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/src/agents/BatchAgent.cpp">
+			<Option target="RLCPP"/>
+		</Unit>
+		<Unit filename="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/src/agents/CrossEntropyMethod.cpp">
+			<Option target="RLCPP"/>
+		</Unit>
+		<Unit filename="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/src/bases/Basis.cpp">
+			<Option target="RLCPP"/>
+		</Unit>
+		<Unit filename="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/src/bases/FourierBasis.cpp">
+			<Option target="RLCPP"/>
+		</Unit>
+		<Unit filename="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/src/environments/Environment.cpp">
+			<Option target="RLCPP"/>
+		</Unit>
+		<Unit filename="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/src/environments/Gridworld687.cpp">
+			<Option target="RLCPP"/>
+		</Unit>
+		<Unit filename="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/src/environments/Pendulum.cpp">
+			<Option target="RLCPP"/>
+		</Unit>
+		<Unit filename="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/src/experimental/CMPSCI687/HW1.cpp">
+			<Option target="RLCPP"/>
+		</Unit>
+		<Unit filename="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/src/experimental/basicExperiments.cpp">
+			<Option target="RLCPP"/>
+		</Unit>
+		<Unit filename="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/src/main.cpp">
+			<Option target="RLCPP"/>
+		</Unit>
+		<Unit filename="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/src/other/CImgPlot.cpp">
+			<Option target="RLCPP"/>
+		</Unit>
+		<Unit filename="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/src/other/CImgWindow.cpp">
+			<Option target="RLCPP"/>
+		</Unit>
+		<Unit filename="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/src/other/CMAES.cpp">
+			<Option target="RLCPP"/>
+		</Unit>
+		<Unit filename="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/src/other/EigenExtensions.cpp">
+			<Option target="RLCPP"/>
+		</Unit>
+		<Unit filename="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/src/other/GradientDescent.cpp">
+			<Option target="RLCPP"/>
+		</Unit>
+		<Unit filename="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/src/other/IOUtils.cpp">
+			<Option target="RLCPP"/>
+		</Unit>
+		<Unit filename="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/src/other/MarsagliaGenerator.cpp">
+			<Option target="RLCPP"/>
+		</Unit>
+		<Unit filename="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/src/other/MathUtils.cpp">
+			<Option target="RLCPP"/>
+		</Unit>
+		<Unit filename="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/src/other/MatlabInterface.cpp">
+			<Option target="RLCPP"/>
+		</Unit>
+		<Unit filename="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/src/other/PlotLearningCurves.cpp">
+			<Option target="RLCPP"/>
+		</Unit>
+		<Unit filename="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/src/other/TestOther.cpp">
+			<Option target="RLCPP"/>
+		</Unit>
+		<Unit filename="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/src/other/Thing.cpp">
+			<Option target="RLCPP"/>
+		</Unit>
+		<Unit filename="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/src/other/Timer.cpp">
+			<Option target="RLCPP"/>
+		</Unit>
+		<Unit filename="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/src/other/mvnpdf.cpp">
+			<Option target="RLCPP"/>
+		</Unit>
+		<Unit filename="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/src/other/mvnrnd.cpp">
+			<Option target="RLCPP"/>
+		</Unit>
+		<Unit filename="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/src/other/tinv.cpp">
+			<Option target="RLCPP"/>
+		</Unit>
+		<Unit filename="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/src/policies/LinearNormal.cpp">
+			<Option target="RLCPP"/>
+		</Unit>
+		<Unit filename="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/src/policies/Policy.cpp">
+			<Option target="RLCPP"/>
+		</Unit>
+		<Unit filename="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/src/policies/TabularSoftmax.cpp">
+			<Option target="RLCPP"/>
+		</Unit>
+		<Unit filename="/Users/danielsampetethiyagu/github/RL_CS687/cpp_source_v3/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

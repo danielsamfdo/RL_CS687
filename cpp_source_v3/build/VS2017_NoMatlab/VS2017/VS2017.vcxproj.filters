@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\other">
+      <UniqueIdentifier>{8b854875-87fb-4127-b46b-2a84961f1202}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\other">
+      <UniqueIdentifier>{86641b2f-705c-46be-822c-11a116c23aca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\environments">
+      <UniqueIdentifier>{0d27c49b-41f9-4b4c-9230-ff30811e7449}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\environments">
+      <UniqueIdentifier>{7428ffa5-43b3-4339-b470-6ad5a4984fb4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\policies">
+      <UniqueIdentifier>{afaa768d-c5f4-4248-993c-b4141a4b4155}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\policies">
+      <UniqueIdentifier>{8e1af3f9-f3bd-4cb0-8786-e4c1b4458664}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\agents">
+      <UniqueIdentifier>{e44455be-31ae-47ab-92cc-a6e0a3ed9384}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\agents">
+      <UniqueIdentifier>{7168057e-4468-4b7e-b2d0-86656fe88560}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\experimental">
+      <UniqueIdentifier>{627ecab3-511d-4a3b-ad04-dd5acf73e736}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\experimental">
+      <UniqueIdentifier>{297db858-696b-4757-b9b3-738b1afae7c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\bases">
+      <UniqueIdentifier>{48926c98-7039-4108-9cb6-41a501a630d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\bases">
+      <UniqueIdentifier>{ab5dd4ac-22c6-43e5-a56b-4994cc4b5769}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\experimental\CMPSCI687">
+      <UniqueIdentifier>{dd8c1fa1-2bf9-430f-b1ee-820d8f435a35}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\experimental\CMPSCI687">
+      <UniqueIdentifier>{4e6348d5-ea44-467e-b82b-f84f4837e6d3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\other\CMAES.cpp">
+      <Filter>Source Files\other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\other\MathUtils.cpp">
+      <Filter>Source Files\other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\other\IOUtils.cpp">
+      <Filter>Source Files\other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\other\GradientDescent.cpp">
+      <Filter>Source Files\other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\other\MarsagliaGenerator.cpp">
+      <Filter>Source Files\other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\other\mvnpdf.cpp">
+      <Filter>Source Files\other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\other\mvnrnd.cpp">
+      <Filter>Source Files\other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\other\Timer.cpp">
+      <Filter>Source Files\other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\other\tinv.cpp">
+      <Filter>Source Files\other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\other\TestOther.cpp">
+      <Filter>Source Files\other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\other\MatlabInterface.cpp">
+      <Filter>Source Files\other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\environments\Environment.cpp">
+      <Filter>Source Files\environments</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\policies\Policy.cpp">
+      <Filter>Source Files\policies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\other\Thing.cpp">
+      <Filter>Source Files\other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\agents\Agent.cpp">
+      <Filter>Source Files\agents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\agents\BatchAgent.cpp">
+      <Filter>Source Files\agents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\policies\TabularSoftmax.cpp">
+      <Filter>Source Files\policies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\other\CImgWindow.cpp">
+      <Filter>Source Files\other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\experimental\basicExperiments.cpp">
+      <Filter>Source Files\experimental</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\bases\Basis.cpp">
+      <Filter>Source Files\bases</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\bases\FourierBasis.cpp">
+      <Filter>Source Files\bases</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\agents\CrossEntropyMethod.cpp">
+      <Filter>Source Files\agents</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\environments\Pendulum.cpp">
+      <Filter>Source Files\environments</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\environments\Gridworld687.cpp">
+      <Filter>Source Files\environments</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\policies\LinearNormal.cpp">
+      <Filter>Source Files\policies</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\other\CImgPlot.cpp">
+      <Filter>Source Files\other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\other\PlotLearningCurves.cpp">
+      <Filter>Source Files\other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\experimental\CMPSCI687\HW1.cpp">
+      <Filter>Source Files\experimental\CMPSCI687</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\header\stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\header\other\CMAES.hpp">
+      <Filter>Header Files\other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\header\other\MathUtils.hpp">
+      <Filter>Header Files\other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\header\other\IOUtils.hpp">
+      <Filter>Header Files\other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\header\other\GradientDescent.hpp">
+      <Filter>Header Files\other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\header\other\MarsagliaGenerator.hpp">
+      <Filter>Header Files\other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\header\other\mvnpdf.hpp">
+      <Filter>Header Files\other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\header\other\mvnrnd.hpp">
+      <Filter>Header Files\other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\header\other\Timer.hpp">
+      <Filter>Header Files\other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\header\other\tinv.hpp">
+      <Filter>Header Files\other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\header\other\TestOther.hpp">
+      <Filter>Header Files\other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\header\other\EigenExtensions.hpp">
+      <Filter>Header Files\other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\header\other\MatlabInterface.hpp">
+      <Filter>Header Files\other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\header\environments\Environment.hpp">
+      <Filter>Header Files\environments</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\header\other\Thing.hpp">
+      <Filter>Header Files\other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\header\policies\Policy.hpp">
+      <Filter>Header Files\policies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\header\agents\Agent.hpp">
+      <Filter>Header Files\agents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\header\other\History.hpp">
+      <Filter>Header Files\other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\header\policies\TabularSoftmax.hpp">
+      <Filter>Header Files\policies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\header\other\CImgWindow.hpp">
+      <Filter>Header Files\other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\header\experimental\basicExperiments.hpp">
+      <Filter>Header Files\experimental</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\header\agents\BatchAgent.hpp">
+      <Filter>Header Files\agents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\header\bases\Basis.hpp">
+      <Filter>Header Files\bases</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\header\bases\FourierBasis.hpp">
+      <Filter>Header Files\bases</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\header\agents\CrossEntropyMethod.hpp">
+      <Filter>Header Files\agents</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\header\environments\Pendulum.hpp">
+      <Filter>Header Files\environments</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\header\environments\Gridworld687.hpp">
+      <Filter>Header Files\environments</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\header\policies\LinearNormal.hpp">
+      <Filter>Header Files\policies</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\header\other\CImgPlot.hpp">
+      <Filter>Header Files\other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\header\other\PlotLearningCurves.hpp">
+      <Filter>Header Files\other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\header\experimental\CMPSCI687\HW1.hpp">
+      <Filter>Header Files\experimental\CMPSCI687</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
