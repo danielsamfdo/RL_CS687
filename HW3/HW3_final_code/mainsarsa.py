@@ -30,5 +30,5 @@ def main():
   print datetime.datetime.now()
 
 
-# main()
-plotforSARSA()
+main()
+# plotforSARSA()
