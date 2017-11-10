@@ -19,6 +19,8 @@ To plot a graph, go to main.py and comment main() and uncomment plotforQLearning
 
 If you want to update the number of episodes QLearning runs for, in each trial. Go to Qlearning.py  and update episode_count from 60 to the desired number
 
+If you want to set the number of process that is spawned inside training , go to main.py and set n_jobs=required_number_of_jobs
+
 
 To Run SARSA : 
 
@@ -34,3 +36,5 @@ Graph - uses all files saved to q3_final_SARSA
 
 To plot a graph, go to main.py and comment main() and uncomment plotforSARSA()
 
+
+If you want to set the number of process that is spawned inside training , go to main.py and set n_jobs=required_number_of_jobs

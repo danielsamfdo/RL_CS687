@@ -6,11 +6,12 @@ import joblib
 from math import sqrt
 import datetime
 
+from utils import *
 
 
-def plotforSARSA()
+def plotforSARSA():
   data, mean, std = gatherdata("q3_final_SARSA/")
-  plot_and_save('q2_ql_10k.png',mean,std,np.arange(200))
+  plot_and_save('q3_sarsa_10k.png',mean,std,np.arange(200))
 
 
 
@@ -20,7 +21,7 @@ def parallelfun(obj,env,qlist,ind):
   joblib.dump(obj, "q3_final_SARSA/SARSA_all_instances_fin"+str(ind)+".jobpkl")  
 
 def main():
-  trials = 10000
+  trials = 5
   alp, gam, eps, order = (0.05, 1, 0.5, 2)
   print datetime.datetime.now()
   mcql = [MountainCar() for count in xrange(trials)]
@@ -29,5 +30,5 @@ def main():
   print datetime.datetime.now()
 
 
-main()
-# plotforSARSA()
+# main()
+plotforSARSA()
