@@ -1,0 +1,105 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{url}
+% For basic math, align, fonts, etc.
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+\mathtoolsset{showonlyrefs}
+
+\usepackage{hyperref} 
+
+% For color
+\usepackage{xcolor}
+\definecolor{dark-red}{rgb}{0.4,0.15,0.15}
+\definecolor{dark-blue}{rgb}{0,0,0.7}
+\hypersetup{
+    colorlinks, linkcolor={dark-blue},
+    citecolor={dark-blue}, urlcolor={dark-blue}
+}
+
+\begin{document}
+
+\begin{center}
+    \begin{Large}
+    CMPSCI 687 Homework 4
+    \end{Large}
+    \\
+    Due December 7, 2017, 11pm Eastern Time
+    \\
+    75 Points Total
+\end{center}
+
+\noindent {\bf Instructions: } You may discuss concepts with other students, but should not discuss implementation details or results. The assignment should be submitted as a single .zip (not .tar or .tar.gz) file on Moodle. The .zip should include a .pdf file with your response to all of the questions and with the results plots included. The .zip should also include your source code. The automated system will not accept assignments after 11:55pm on the due date specified above.
+\\\\
+If you do not include your source code, you will get a $0/75$ on this assignment. If the code that you include does not reproduce the results that you report, it will be handled as a possible academic honesty violation.
+\\\\
+For this assignment you should (but need not necessarily\footnote{You may use any language that you want, but you must code the agents entirely from scratch (you may not use or reference existing agent code). You may use existing code for the environments, but you must ensure that they are equivalent to the versions that we provide (e.g., the gridworld that we use is one that we made up). We strongly recommend using the provided code and C++ because we provide much of the code and the implementation is computationally efficient and threaded.}) use the provided code. When run the code allows you to select an RL algorithm, an environment, and then asks you to specify hyperparameters. You then must specify the number of trials (we recommend more than 100 to get consistent results) and how many episodes to run in each trial (we leave this to you to determine in this assignment). After running, the code produces an output .csv file that starts with \texttt{out\_}, which contains the mean return during each episode and the sample standard deviation of the returns, which should be used to create error bars. You should use your own desired plotting method to translate this .csv file into a plot.\footnote{For example, if you open the .csv in excel and select the first column and make a line plot, this will produce the standard learning curve with horizontal axis ``Episode" and vertical axis ``Average Discounted Return", which you can then add error bars to using the second column.}
+
+For this assignment you will implement Q$(\lambda)$, and Actor-Critic algorithm, and REINFORCE with a constant baseline.
+
+\begin{enumerate}
+    \item (25 Points - Q$(\lambda)$) You will implement $\epsilon$-greedy Q$(\lambda)$ using linear function approximation and the Fourier basis. The code that you must add is in QLambda.cpp. This implementation uses the ``more efficient" form of linear function approximation with discrete actions, as mentioned in the previous assignment. That is, the feature vector, $\phi(s,a)$, is sparse and is not computed. Instead, we only compute features given the state, i.e., $\phi(s)$, and take the dot product of these features with a segment of the weights, $w$, which depends on the action. See the \texttt{getAction} function in \texttt{QLambda.cpp} for more details about how the weights are used to compute q-values. You may wish to review the \texttt{segment} function of vectors documented here: \url{https://eigen.tuxfamily.org/dox/group__TutorialBlockOperations.html}.
+    \\\\
+    \indent {\bf (A)} Find parameters that work well on the provided Gridworld domain. Report your parameters along with a plot showing the resulting performance.
+    \\\\
+    \indent {\bf (B)} Find parameters that work well on the provided Mountain Car domain. Report your parameters along with a plot showing the resulting performance.
+    \\\\
+    \indent {\bf (C)} Find parameters that work well on the provided Cart Pole domain. Report your parameters along with a plot showing the resulting performance.
+    \\\\
+    \indent {\bf (D)} Find parameters that work well on the provided Acrobot domain. Report your parameters along with a plot showing the resulting performance.
+    \\\\
+    \indent {\bf (E)} Comment on the difficulty of finding optimal hyper-parameters for this algorithm. Is it getting easier as you have more experience with RL algorithms? Which parameters did the algorithm appear to be most and least sensitive to? Did any hyperparameter values surprise you?
+    \\\\
+    \item (25 Points - Actor-Critic) You will implement an actor-critic using linear function approximation and eligibility traces for both the actor and the critic. The actor will use softmax action selection with linear function approximation over states and the Fourier basis. See the \texttt{getAction} function in \texttt{ActorCritic.cpp} for more details about how the policy is parameterized. The update that you should implement is:
+    \begin{gather}
+        \delta \gets R_t + \gamma v^\intercal \phi(S_{t+1})-v^\intercal \phi(S_t)
+        \\
+        e_v \gets \gamma \lambda e_v + \phi(S_t)
+        \\
+        v \gets v + \alpha_{\text{critic}}\delta e_v
+        \\
+        e_\theta \gets \gamma \lambda e_\theta + \frac{\partial \ln( \pi(s,a,\theta))}{\partial \theta}
+        \\
+        \theta \gets \theta + \alpha_\text{actor}e_\theta,
+    \end{gather}
+    where $\alpha_\text{actor}$ and $\alpha_\text{critic}$ are two (possibly different) step sizes, the eligibility traces, $e_v$ and $e_\theta$ are initialized to zero at the start of each episode, and $\phi(S_{t+1})$ is the zero-vector if $S_{t+1}$ is a terminal state. We recommend that you use a separate function, \texttt{dlnpi} to implement $\frac{\partial \ln(\pi(s,a,\theta))}{\partial \theta}$, and then use this function in the train functions. 
+    \\\\
+    Notice that this algorithm is the actor-critic presented on page 277 of the November 5'th draft of Sutton and Barto's new book. It is the same as the actor-critic algorithm that we wrote on the board in class, but with eligibility traces added to the actor.
+    \\\\
+    \indent {\bf (A)} Show a derivation of $\frac{\partial \ln(\pi(s,a,\theta))}{\partial \theta}$ (this is something that you must have done in order to be able to code the method).
+    \\\\
+    \indent {\bf (B)} Find parameters that work well on the provided Gridworld domain. Report your parameters along with a plot showing the resulting performance.
+    \\\\
+    \indent {\bf (C)} Find parameters that work well on the provided Mountain Car domain. Report your parameters along with a plot showing the resulting performance.
+    \\\\
+    \indent {\bf (D)} Find parameters that work well on the provided Cart Pole domain. Report your parameters along with a plot showing the resulting performance.
+    \\\\
+    \indent {\bf (E)} Find parameters that work well on the provided Acrobot domain. Report your parameters along with a plot showing the resulting performance.
+    \\\\
+    \indent {\bf (F)} Comment on the difficulty of finding optimal hyper-parameters for this algorithm. How does this algorithm compare to Q$(\lambda)$?
+    \\\\
+    \item (25 Points - REINFORCE with Constant Baseline) Implement the REINFORCE algorithm using a baseline, $b(s)$, that is a constant, i.e., that does not depend on the state. The code that you must fill in is in \texttt{REINFORCE.cpp}. To simplify this portion, we have implemented the baseline update for you---you need only implement the computation of the returns and the policy update, along with the same \texttt{dlnpi} function from the actor-critic algorithm.
+    \\\\
+    Recall that the REINFORCE update for time step $t$ is:
+    $$
+    \theta \gets \theta + \alpha (G_t-b)\frac{\partial \ln(\pi(s,a,\theta))}{\partial \theta},
+    $$
+    where $b$ is the baseline. In the code {\bf 1)} we store the entire episode and then perform the updates for each time step after the episode has completed, so that we can compute the returns $G_t$, and {\bf 2)} we define an array, \texttt{errors}, which stores $G_t-b$ for each time step, $t$.
+    \\\\
+    \indent {\bf (A)} Find parameters that work well on the provided Gridworld domain. Report your parameters along with a plot showing the resulting performance.
+    \\\\
+    \indent {\bf (B)} \textbf{Attempt} to find parameters that work well on the provided Mountain Car domain. Report the best parameters that you find. Comment on why you think that REINFORCE does not perform well on Mountain Car relative to the other methods.
+    \\\\
+    \indent {\bf (C)} Find parameters that work well on the provided Cart Pole domain. Report your parameters along with a plot showing the resulting performance.
+    \\\\
+    \indent {\bf (D)} Find parameters that work well on the provided Acrobot domain. Report your parameters along with a plot showing the resulting performance.
+    \\\\
+    \indent {\bf (E)} Comment on the difficulty of finding optimal hyper-parameters for this algorithm. How does this algorithm compare to Q$(\lambda)$ and the actor-critic algorithm?
+\end{enumerate}
+
+
+\end{document}

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Project" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Project" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-std=c++11" />
+					<Add option="-g" />
+					<Add option="-fopenmp" />
+					<Add directory="../../header" />
+					<Add directory="../../include" />
+				</Compiler>
+				<Linker>
+					<Add option="-fopenmp" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Project" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-std=c++11" />
+					<Add option="-fopenmp" />
+					<Add directory="../../header" />
+					<Add directory="../../include" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="-fopenmp" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-std=c++11" />
+			<Add option="-fopenmp" />
+		</Compiler>
+		<Unit filename="../../header/Acrobot.hpp" />
+		<Unit filename="../../header/ActorCritic.hpp" />
+		<Unit filename="../../header/Agent.hpp" />
+		<Unit filename="../../header/CartPole.hpp" />
+		<Unit filename="../../header/Environment.hpp" />
+		<Unit filename="../../header/FourierBasis.hpp" />
+		<Unit filename="../../header/Gridworld.hpp" />
+		<Unit filename="../../header/MountainCar.hpp" />
+		<Unit filename="../../header/QLambda.hpp" />
+		<Unit filename="../../header/REINFORCE.hpp" />
+		<Unit filename="../../header/stdafx.hpp" />
+		<Unit filename="../../src/Acrobot.cpp" />
+		<Unit filename="../../src/ActorCritic.cpp" />
+		<Unit filename="../../src/CartPole.cpp" />
+		<Unit filename="../../src/FourierBasis.cpp" />
+		<Unit filename="../../src/Gridworld.cpp" />
+		<Unit filename="../../src/MountainCar.cpp" />
+		<Unit filename="../../src/QLambda.cpp" />
+		<Unit filename="../../src/REINFORCE.cpp" />
+		<Unit filename="../../src/main.cpp" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

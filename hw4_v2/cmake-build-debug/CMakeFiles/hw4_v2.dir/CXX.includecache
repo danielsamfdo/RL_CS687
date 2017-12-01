@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/danielsampetethiyagu/github/RL_CS687/hw4_v2/src/Acrobot.cpp
+stdafx.hpp
+-
+
+/Users/danielsampetethiyagu/github/RL_CS687/hw4_v2/src/ActorCritic.cpp
+stdafx.hpp
+-
+
+/Users/danielsampetethiyagu/github/RL_CS687/hw4_v2/src/CartPole.cpp
+stdafx.hpp
+-
+
+/Users/danielsampetethiyagu/github/RL_CS687/hw4_v2/src/FourierBasis.cpp
+stdafx.hpp
+-
+
+/Users/danielsampetethiyagu/github/RL_CS687/hw4_v2/src/Gridworld.cpp
+Gridworld.hpp
+-
+stdlib.h
+-
+
+/Users/danielsampetethiyagu/github/RL_CS687/hw4_v2/src/MountainCar.cpp
+stdafx.hpp
+-
+
+/Users/danielsampetethiyagu/github/RL_CS687/hw4_v2/src/QLambda.cpp
+stdafx.hpp
+-
+
+/Users/danielsampetethiyagu/github/RL_CS687/hw4_v2/src/REINFORCE.cpp
+stdafx.hpp
+-
+
+/Users/danielsampetethiyagu/github/RL_CS687/hw4_v2/src/main.cpp
+stdafx.hpp
+-
+
