@@ -98,7 +98,10 @@ VectorXd ActorCritic::dlnpi(const Eigen::VectorXd & features, const int & action
 	// Compute dlnpi
 	VectorXd result(numFeatures*numActions);
 	
-	result = VectorXd::Constant(numFeatures*numActions,1.0);
+
+	for(int a=0;a<numActions;a++){
+		result.segment(numFeatures*a,numFeatures) = (features * ( 1 - actionProbabilities[a])) 
+	}
 	// @TODO	@TODO	@TODO	@TODO	@TODO	@TODO	@TODO @TODO	@TODO
 	// @TODO 5 OF 5
 	// @TODO: Fill in the code for computing dlnpi. You must first under stand how getAction

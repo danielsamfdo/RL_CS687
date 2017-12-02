@@ -110,7 +110,10 @@ VectorXd REINFORCE::dlnpi(const Eigen::VectorXd & features, const int & action)
 	// for(int i=0;i<numFeatures*numActions;i++){
 	// 	z[i] = 1;
 	// }
-	result = VectorXd::Constant(numFeatures*numActions,1.0) - theta;
+	for(int a=0;a<numActions;a++){
+		result.segment(numFeatures*a,numFeatures) = (features * ( 1 - actionProbabilities[a])) 
+	}
+
 	// @TODO	@TODO	@TODO	@TODO	@TODO	@TODO	@TODO @TODO	@TODO
 	// @TODO 3 OF 3
 	// @TODO: Fill in the code for computing dlnpi. You must first under stand how getAction
