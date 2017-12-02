@@ -11,6 +11,7 @@ public:
 	QLambda(int numFeatures, int numActions, double alpha, double gamma, double lambda, double epsilon);
 	~QLambda();
 	int getAction(const Eigen::VectorXd & state, std::mt19937_64 & generator) override;
+	int getAction(const Eigen::VectorXd & state, std::mt19937_64 & generator, bool maxAction) override;
 
 	// Train function to be used for non-terminal updates
 	void train(const Eigen::VectorXd & features, const int & action, const double & reward, const Eigen::VectorXd & newFeatures) override;
