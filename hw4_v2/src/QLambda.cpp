@@ -88,8 +88,11 @@ void QLambda::train(const VectorXd & features, const int & action, const double 
 	// @TODO	@TODO	@TODO	@TODO	@TODO	@TODO	@TODO @TODO	@TODO
 	// @TODO 4 OF 9
 	// @TODO: Fill in the code to update the vector, e
-	e.segment(numFeatures*action, numFeatures)+=1;
-	
+	Eigen::VectorXd z(numFeatures);
+	for(int i=0;i<numFeatures;i++)
+		z[i] = 1;
+	e.segment(numFeatures*action, numFeatures) = e.segment(numFeatures*action, numFeatures) + z;
+
 	// Update the q-estimate (w)
 	// @TODO	@TODO	@TODO	@TODO	@TODO	@TODO	@TODO @TODO	@TODO
 	// @TODO 5 OF 9
@@ -99,7 +102,7 @@ void QLambda::train(const VectorXd & features, const int & action, const double 
 			e.segment(numFeatures*action, numFeatures) *= gamma*lambda;
 		}
 		else{
-			e.segment(numFeatures*action, numFeatures) *= 0;
+			e.segment(numFeatures*action, numFeatures) *= 0.0;
 		}
 	}
 
@@ -128,7 +131,11 @@ void QLambda::train(const VectorXd & features, const int & action, const double 
 	// @TODO	@TODO	@TODO	@TODO	@TODO	@TODO	@TODO @TODO	@TODO
 	// @TODO 8 OF 9
 	// @TODO: Fill in the code to update the vector, e
-	e.segment(numFeatures*action, numFeatures)+=1;
+	Eigen::VectorXd z(numFeatures);
+	for(int i=0;i<numFeatures;i++)
+		z[i] = 1;
+	e.segment(numFeatures*action, numFeatures) = e.segment(numFeatures*action, numFeatures) + z;
+
 
 	// Update the q-estimate (w)
 	// @TODO	@TODO	@TODO	@TODO	@TODO	@TODO	@TODO @TODO	@TODO
