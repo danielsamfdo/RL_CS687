@@ -88,7 +88,7 @@ void REINFORCE::train(const VectorXd & features, const int & action, const doubl
 		VectorXd feature = featureHistory[t];
 		int a = actionHistory[t];
 		double r = rewardHistory[t];
-		theta.segment(numFeatures*action, numFeatures) += (alpha_actor * (returns[t]) * dlnpi(feature,a));
+		theta.segment(numFeatures*action, numFeatures) += (alpha_actor * (returns[t]) * dlnpi(feature,a).segment(numFeatures*action, numFeatures));
 	}
 	// Update baseline
 	baseline = (1 - alpha_baseline)*baseline + alpha_baseline*returns.mean();
