@@ -58,7 +58,7 @@ void ActorCritic::train(const VectorXd & features, const int & action, const dou
 	// Update the actor (update theta, the policy parameters, eTheta, the e-traces for theta). Here you may want to use dlnpi
 	// @TODO	@TODO	@TODO	@TODO	@TODO	@TODO	@TODO @TODO	@TODO
 	// @TODO 2 OF 5
-	eTheta = (gamma * lambda * eTheta) + dlnpi(features);
+	eTheta = (gamma * lambda * eTheta) + dlnpi(features,action);
 	theta = theta + (alpha_actor * eTheta);
 	// @TODO: Fill in the code for the updates to eTheta, and then the update to theta. This will likely use dlnpi, defined below
 }
@@ -83,7 +83,7 @@ void ActorCritic::train(const VectorXd & features, const int & action, const dou
 	// @TODO	@TODO	@TODO	@TODO	@TODO	@TODO	@TODO @TODO	@TODO
 	// @TODO 4 OF 5
 	// @TODO: Fill in the code for the updates to eTheta, and then the update to theta. This will likely use dlnpi, defined below
-	eTheta = (gamma * lambda * eTheta) + dlnpi(features);
+	eTheta = (gamma * lambda * eTheta) + dlnpi(features,action);
 	theta = theta + (alpha_actor * eTheta);
 	// Clear e-traces since it is a terminal update
 	ev.setZero();
@@ -97,8 +97,8 @@ VectorXd ActorCritic::dlnpi(const Eigen::VectorXd & features, const int & action
 
 	// Compute dlnpi
 	VectorXd result(numFeatures*numActions);
-	VectorXd::Constant v(numFeatures*numActions,1.0);
-	result = v - actionProbabilities;
+	
+	result = VectorXd::Constant(numFeatures*numActions,1.0) - actionProbabilities;
 	// @TODO	@TODO	@TODO	@TODO	@TODO	@TODO	@TODO @TODO	@TODO
 	// @TODO 5 OF 5
 	// @TODO: Fill in the code for computing dlnpi. You must first under stand how getAction
