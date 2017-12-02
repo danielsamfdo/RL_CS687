@@ -52,10 +52,14 @@ void ActorCritic::train(const VectorXd & features, const int & action, const dou
 	// @TODO	@TODO	@TODO	@TODO	@TODO	@TODO	@TODO @TODO	@TODO
 	// @TODO 1 OF 5
 	// @TODO: Fill in the code for the updates to ev, and then the update to v. Note that v(s) = v.dot(features) and v(s') = v.dot(newFeatures)
-
+	double delta = reward + (gamma * v.dot(newFeatures)) - v.dot(features);
+	ev = (gamma * lambda * ev) + features;
+	v = v + (alpha_critic * delta * ev);
 	// Update the actor (update theta, the policy parameters, eTheta, the e-traces for theta). Here you may want to use dlnpi
 	// @TODO	@TODO	@TODO	@TODO	@TODO	@TODO	@TODO @TODO	@TODO
 	// @TODO 2 OF 5
+	eTheta = (gamma * lambda * eTheta) + dlnpi(features);
+	theta = theta + (alpha_actor * eTheta);
 	// @TODO: Fill in the code for the updates to eTheta, and then the update to theta. This will likely use dlnpi, defined below
 }
 
@@ -72,12 +76,15 @@ void ActorCritic::train(const VectorXd & features, const int & action, const dou
 	// @TODO 3 OF 5
 	// @TODO: Fill in the code for the updates to ev, and then the update to v. Note that v(s) = v.dot(features) and v(s') = v.dot(newFeatures)
 	//			Notice that here newFeatures aren't provided because this function is only called during a terminal update the value of the new state is zero.
-
+	double delta = reward - v.dot(features);
+	ev = (gamma * lambda * ev) + features;
+	v = v + (alpha_critic * delta * ev);
 	// Update the actor (update theta, the policy parameters, eTheta, the e-traces for theta). Here you may want to use dlnpi
 	// @TODO	@TODO	@TODO	@TODO	@TODO	@TODO	@TODO @TODO	@TODO
 	// @TODO 4 OF 5
 	// @TODO: Fill in the code for the updates to eTheta, and then the update to theta. This will likely use dlnpi, defined below
-
+	eTheta = (gamma * lambda * eTheta) + dlnpi(features);
+	theta = theta + (alpha_actor * eTheta);
 	// Clear e-traces since it is a terminal update
 	ev.setZero();
 	eTheta.setZero();
@@ -90,7 +97,8 @@ VectorXd ActorCritic::dlnpi(const Eigen::VectorXd & features, const int & action
 
 	// Compute dlnpi
 	VectorXd result(numFeatures*numActions);
-	
+	VectorXd::Constant v(numFeatures*numActions,1.0);
+	result = v - actionProbabilities;
 	// @TODO	@TODO	@TODO	@TODO	@TODO	@TODO	@TODO @TODO	@TODO
 	// @TODO 5 OF 5
 	// @TODO: Fill in the code for computing dlnpi. You must first under stand how getAction
