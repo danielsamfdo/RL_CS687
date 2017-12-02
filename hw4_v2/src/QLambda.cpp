@@ -22,10 +22,10 @@ QLambda::QLambda(int numFeatures, int numActions, double alpha, double gamma, do
 
 QLambda::~QLambda() {}
 
-int QLambda::getAction(const Eigen::VectorXd & features, std::mt19937_64 & generator)
+int QLambda::getAction(const Eigen::VectorXd & features, std::mt19937_64 & generator, bool maxAction=false)
 {
 	// Check if we should explore
-	if (d(generator)) // This returns true with probability epsilon, due to the way that d was initialized in the constructor (up top)
+	if (d(generator) && !maxAction) // This returns true with probability epsilon, due to the way that d was initialized in the constructor (up top)
 		return explorationDistribution(generator);	// Explore by selecting an action uniformly randomly (this is what the explorationDistribution was initialized to do)
 	
 	// Get q(s,a) for each a. This is just a dot-product
@@ -70,14 +70,15 @@ void QLambda::train(const VectorXd & features, const int & action, const double 
 
 	std::random_device rd;
 	std::mt19937_64 gen(rd());
-	int a_prime = getAction(newFeatures, gen);
+	int a_prime = getAction(newFeatures, gen, false);
+	int a_star = getAction(newFeatures, gen, true);
 
 	// Compute max_a', q(s',a'), where s' is described by newFeatures
 	double newQ;
 	// @TODO	@TODO	@TODO	@TODO	@TODO	@TODO	@TODO @TODO	@TODO
 	// @TODO 2 OF 9
 	// @TODO: Fill in code to compute newQ
-	newQ = newFeatures.dot(w.segment(numFeatures*a_prime, numFeatures));
+	newQ = newFeatures.dot(w.segment(numFeatures*a_star, numFeatures));
 	// Compute the TD error using reward, newQ, curQ, and gamma
 	double delta = reward + (gamma*newQ) - curQ;
 	// @TODO	@TODO	@TODO	@TODO	@TODO	@TODO	@TODO @TODO	@TODO
@@ -97,12 +98,12 @@ void QLambda::train(const VectorXd & features, const int & action, const double 
 	// @TODO	@TODO	@TODO	@TODO	@TODO	@TODO	@TODO @TODO	@TODO
 	// @TODO 5 OF 9
 	for (int a = 0; a < numActions; a++){
-		w.segment(numFeatures*a, numFeatures) += (e.segment(numFeatures*action, numFeatures) * alpha * delta);
-		if(a == a_prime){
-			e.segment(numFeatures*action, numFeatures) *= gamma*lambda;
+		w.segment(numFeatures*a, numFeatures) += (e.segment(numFeatures*a, numFeatures) * alpha * delta);
+		if(a_star == a_prime){
+			e.segment(numFeatures*a, numFeatures) *= gamma*lambda;
 		}
 		else{
-			e.segment(numFeatures*action, numFeatures) *= 0.0;
+			e.segment(numFeatures*a, numFeatures) *= 0.0;
 		}
 	}
 
@@ -142,7 +143,7 @@ void QLambda::train(const VectorXd & features, const int & action, const double 
 	// @TODO 9 OF 9
 	// @TODO: Fill in the code to update the vector, w
 	for (int a = 0; a < numActions; a++){
-		w.segment(numFeatures*a, numFeatures) += (e.segment(numFeatures*action, numFeatures) * alpha * delta);
+		w.segment(numFeatures*a, numFeatures) += (e.segment(numFeatures*a, numFeatures) * alpha * delta);
 	}
 	// Clear the e-traces because this is a terminal update (the newFeatures would correspond to a terminal state)
 	e.setZero();
