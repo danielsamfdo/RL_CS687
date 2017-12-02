@@ -66,15 +66,20 @@ void QLambda::train(const VectorXd & features, const int & action, const double 
 	// @TODO	@TODO	@TODO	@TODO	@TODO	@TODO	@TODO @TODO	@TODO
 	// @TODO 1 OF 9
 	// @TODO: Fill in code to compute curQ. See getAction to get an idea of how the weights are used to compute q-values
+	curQ = features.dot(w.segment(numFeatures*action, numFeatures));
+
+	std::random_device rd;
+	std::mt19937_64 gen(rd());
+	int a_prime = getAction(newFeatures, gen);
 
 	// Compute max_a', q(s',a'), where s' is described by newFeatures
 	double newQ;
 	// @TODO	@TODO	@TODO	@TODO	@TODO	@TODO	@TODO @TODO	@TODO
 	// @TODO 2 OF 9
 	// @TODO: Fill in code to compute newQ
-
+	newQ = newFeatures.dot(w.segment(numFeatures*a_prime, numFeatures));
 	// Compute the TD error using reward, newQ, curQ, and gamma
-	double delta;
+	double delta = reward + (gamma*newQ) - curQ;
 	// @TODO	@TODO	@TODO	@TODO	@TODO	@TODO	@TODO @TODO	@TODO
 	// @TODO 3 OF 9
 	// @TODO: Fill in code to compute delta using reward, curQ, newQ, and gamma (already defined as part of the QLambda class)
@@ -83,10 +88,22 @@ void QLambda::train(const VectorXd & features, const int & action, const double 
 	// @TODO	@TODO	@TODO	@TODO	@TODO	@TODO	@TODO @TODO	@TODO
 	// @TODO 4 OF 9
 	// @TODO: Fill in the code to update the vector, e
+	e.segment(numFeatures*action, numFeatures)+=1;
 	
 	// Update the q-estimate (w)
 	// @TODO	@TODO	@TODO	@TODO	@TODO	@TODO	@TODO @TODO	@TODO
 	// @TODO 5 OF 9
+	for (int a = 0; a < numActions; a++){
+		w.segment(numFeatures*a, numFeatures) += (e.segment(numFeatures*action, numFeatures) * alpha * delta);
+		if(a == a_prime){
+			e.segment(numFeatures*action, numFeatures) *= gamma*lambda;
+		}
+		else{
+			e.segment(numFeatures*action, numFeatures) *= 0;
+		}
+	}
+
+
 	// @TODO: Fill in the code to update the vector, w
 }
 
@@ -95,12 +112,14 @@ void QLambda::train(const VectorXd & features, const int & action, const double 
 {
 	// Compute q(s,a), which is q(features, action) using our variables here
 	double curQ;
+	curQ = features.dot(w.segment(numFeatures*action, numFeatures));
+
 	// @TODO	@TODO	@TODO	@TODO	@TODO	@TODO	@TODO @TODO	@TODO
 	// @TODO 6 OF 9
 	// @TODO: Fill in code to compute curQ. See getAction to get an idea of how the weights are used to compute q-values
 
 	// Compute the TD error using reward, curQ, and gamma (newQ = 0 since this is a terminal update)
-	double delta;
+	double delta = reward - curQ;
 	// @TODO	@TODO	@TODO	@TODO	@TODO	@TODO	@TODO @TODO	@TODO
 	// @TODO 7 OF 9
 	// @TODO: Fill in code to compute delta using reward, curQ, newQ, and gamma (already defined as part of the QLambda class)
@@ -109,12 +128,15 @@ void QLambda::train(const VectorXd & features, const int & action, const double 
 	// @TODO	@TODO	@TODO	@TODO	@TODO	@TODO	@TODO @TODO	@TODO
 	// @TODO 8 OF 9
 	// @TODO: Fill in the code to update the vector, e
+	e.segment(numFeatures*action, numFeatures)+=1;
 
 	// Update the q-estimate (w)
 	// @TODO	@TODO	@TODO	@TODO	@TODO	@TODO	@TODO @TODO	@TODO
 	// @TODO 9 OF 9
 	// @TODO: Fill in the code to update the vector, w
-
+	for (int a = 0; a < numActions; a++){
+		w.segment(numFeatures*a, numFeatures) += (e.segment(numFeatures*action, numFeatures) * alpha * delta);
+	}
 	// Clear the e-traces because this is a terminal update (the newFeatures would correspond to a terminal state)
 	e.setZero();
 }
