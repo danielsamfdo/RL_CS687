@@ -22,10 +22,10 @@ QLambda::QLambda(int numFeatures, int numActions, double alpha, double gamma, do
 
 QLambda::~QLambda() {}
 
-int QLambda::getAction(const Eigen::VectorXd & features, std::mt19937_64 & generator, bool maxAction=false)
+int QLambda::getAction(const Eigen::VectorXd & features, std::mt19937_64 & generator)
 {
 	// Check if we should explore
-	if (d(generator) && !maxAction) // This returns true with probability epsilon, due to the way that d was initialized in the constructor (up top)
+	if (d(generator)) // This returns true with probability epsilon, due to the way that d was initialized in the constructor (up top)
 		return explorationDistribution(generator);	// Explore by selecting an action uniformly randomly (this is what the explorationDistribution was initialized to do)
 	
 	// Get q(s,a) for each a. This is just a dot-product
@@ -69,9 +69,38 @@ void QLambda::train(const VectorXd & features, const int & action, const double 
 	curQ = features.dot(w.segment(numFeatures*action, numFeatures));
 
 	std::random_device rd;
-	std::mt19937_64 gen(rd());
-	int a_prime = getAction(newFeatures, gen, false);
-	int a_star = getAction(newFeatures, gen, true);
+	std::mt19937_64 generator(rd());
+	int a_prime = getAction(newFeatures, generator);
+	int a_star;
+	// Get q(s,a) for each a. This is just a dot-product
+	VectorXd qValues(numActions);
+	for (int a = 0; a < numActions; a++)
+		qValues[a] = newFeatures.dot(w.segment(numFeatures*a, numFeatures));
+
+	// Get a greedy action
+	vector<int> bestActions(1);					// Here we will track which actions are currently believed to be optimal
+	bestActions[0] = 0;							// Start with the 0'th action being optimal
+	double bestActionValue = qValues[0];
+	for (int a = 1; a < numActions; a++)		// Loop over other actions and see if they are better
+	{
+		if (qValues[a] == bestActionValue)
+			bestActions.push_back(a);			// Action a is just as good as the current actions believed to be best. Append to bestActions
+		else if (qValues[a] > bestActionValue)
+		{
+			bestActionValue = qValues[a];		// Action a is better than previous actions. Clear bestActions and place in only action a
+			bestActions.resize(1);
+			bestActions[0] = a;
+		}
+	}
+
+	// If there's only one best action, return it
+	if ((int)bestActions.size() == 1)
+		a_star = bestActions[0];
+	else{
+		// There are many best actions - select uniformly among them
+		uniform_int_distribution<int> greedyIndexDistribution(0, (int)bestActions.size()-1);
+		a_star = bestActions[greedyIndexDistribution(generator)];
+	}
 
 	// Compute max_a', q(s',a'), where s' is described by newFeatures
 	double newQ;
