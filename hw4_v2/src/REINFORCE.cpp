@@ -69,13 +69,13 @@ void REINFORCE::train(const VectorXd & features, const int & action, const doubl
 	// @TODO 1 OF 3
 	// @TODO: Load returns[t] with the discounted return starting with reward rewardHistory[t].
 	//		Notice that rewardHistory should also be of length "len" and stores the observed rewards at each time step.
-	// for(int t=len-1;t>=0;t--){
-	// 	if(t==len-1){
-	// 		returns[t] = rewardHistory[t];
-	// 	}else{
-	// 		returns[t] = returns[t] + (gamma*rewardHistory[t+1]);
-	// 	}
-	// }
+	for(int t=len-1;t>=0;t--){
+		if(t==len-1){
+			returns[t] = rewardHistory[t];
+		}else{
+			returns[t] = returns[t] + (gamma*rewardHistory[t+1]);
+		}
+	}
 
 	// Get errors, which are the returns from each time step minus the current baseline
 	VectorXd errors = returns.array() - baseline;
@@ -84,9 +84,12 @@ void REINFORCE::train(const VectorXd & features, const int & action, const doubl
 	// @TODO	@TODO	@TODO	@TODO	@TODO	@TODO	@TODO @TODO	@TODO
 	// @TODO 2 OF 3
 	// @TODO: Notice that you have "errors" computed for you, which is G-baseline. You should likely also make use of the dlnpi function defined below
-	// for(int t=0;t<len;t++){
-	// 	theta.segment(numFeatures*action, numFeatures) = alpha_actor * (returns[t] - baseline) * dlnpi(features,action);
-	// }
+	for(int t=0;t<len;t++){
+		VectorXd feature = featureHistory[t];
+		int a = actionHistory[t];
+		double r = rewardHistory[t];
+		theta.segment(numFeatures*action, numFeatures) += (alpha_actor * (returns[t]) * dlnpi(feature,a));
+	}
 	// Update baseline
 	baseline = (1 - alpha_baseline)*baseline + alpha_baseline*returns.mean();
 
@@ -107,7 +110,7 @@ VectorXd REINFORCE::dlnpi(const Eigen::VectorXd & features, const int & action)
 	// for(int i=0;i<numFeatures*numActions;i++){
 	// 	z[i] = 1;
 	// }
-	// result = z - theta;
+	result = VectorXd::Constant(numFeatures*numActions,1.0) - theta;
 	// @TODO	@TODO	@TODO	@TODO	@TODO	@TODO	@TODO @TODO	@TODO
 	// @TODO 3 OF 3
 	// @TODO: Fill in the code for computing dlnpi. You must first under stand how getAction
