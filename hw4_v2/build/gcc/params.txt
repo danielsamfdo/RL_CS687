@@ -1,5 +1,6 @@
 Goodparams
 Qlambda:
+
 GridWorld:
 Enter alpha: 0.95
 Enter lambda: 0.3
@@ -7,3 +8,15 @@ Enter epsilon: 0.001
 Enter gamma: 1 
 Enter number of trials to run: 300
 Enter the number of episodes per trial: 70
+
+
+Mountain Car:
+Selection: 1
+Enter Fourier basis order: 2
+Enter alpha: 0.95
+Enter lambda: 0.3
+Enter epsilon: 0.001
+Enter gamma: 1
+Enter number of trials to run: 300
+Enter the number of episodes per trial: 70
+
