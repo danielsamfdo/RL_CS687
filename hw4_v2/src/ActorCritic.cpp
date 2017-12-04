@@ -59,7 +59,7 @@ void ActorCritic::train(const VectorXd & features, const int & action, const dou
 	// @TODO	@TODO	@TODO	@TODO	@TODO	@TODO	@TODO @TODO	@TODO
 	// @TODO 2 OF 5
 	eTheta = (gamma * lambda * eTheta) + dlnpi(features,action);
-	theta = theta + (alpha_actor * eTheta);
+	theta = theta + (alpha_actor * delta * eTheta);
 	// @TODO: Fill in the code for the updates to eTheta, and then the update to theta. This will likely use dlnpi, defined below
 }
 
@@ -84,7 +84,7 @@ void ActorCritic::train(const VectorXd & features, const int & action, const dou
 	// @TODO 4 OF 5
 	// @TODO: Fill in the code for the updates to eTheta, and then the update to theta. This will likely use dlnpi, defined below
 	eTheta = (gamma * lambda * eTheta) + dlnpi(features,action);
-	theta = theta + (alpha_actor * eTheta);
+	theta = theta + (alpha_actor * delta * eTheta);
 	// Clear e-traces since it is a terminal update
 	ev.setZero();
 	eTheta.setZero();
