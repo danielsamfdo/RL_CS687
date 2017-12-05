@@ -100,7 +100,10 @@ VectorXd ActorCritic::dlnpi(const Eigen::VectorXd & features, const int & action
 	
 
 	for(int a=0;a<numActions;a++){
-		result.segment(numFeatures*a,numFeatures) = (features * ( 1 - actionProbabilities[a])) ;
+		if(action == a)
+			result.segment(numFeatures*a,numFeatures) = (features * ( 1 - actionProbabilities[a])) ;
+		else
+			result.segment(numFeatures*a,numFeatures) = (features * ( 0 - actionProbabilities[a])) ;
 	}
 	// @TODO	@TODO	@TODO	@TODO	@TODO	@TODO	@TODO @TODO	@TODO
 	// @TODO 5 OF 5

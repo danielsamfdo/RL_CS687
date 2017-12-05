@@ -88,7 +88,7 @@ void REINFORCE::train(const VectorXd & features, const int & action, const doubl
 		VectorXd feature = featureHistory[t];
 		int a = actionHistory[t];
 		double r = rewardHistory[t];
-		theta.segment(numFeatures*action, numFeatures) += (alpha_actor * (returns[t]) * dlnpi(feature,a).segment(numFeatures*action, numFeatures));
+		theta.segment(numFeatures*a, numFeatures) += (alpha_actor * (errors[t]) * dlnpi(feature,a).segment(numFeatures*a, numFeatures));
 	}
 	// Update baseline
 	baseline = (1 - alpha_baseline)*baseline + alpha_baseline*returns.mean();
@@ -111,7 +111,10 @@ VectorXd REINFORCE::dlnpi(const Eigen::VectorXd & features, const int & action)
 	// 	z[i] = 1;
 	// }
 	for(int a=0;a<numActions;a++){
+		if(a==action)
 		result.segment(numFeatures*a,numFeatures) = (features * ( 1 - actionProbabilities[a])) ;
+		else
+		result.segment(numFeatures*a,numFeatures) = (features * ( 0 - actionProbabilities[a])) ;
 	}
 
 	// @TODO	@TODO	@TODO	@TODO	@TODO	@TODO	@TODO @TODO	@TODO
