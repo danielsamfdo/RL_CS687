@@ -121,7 +121,7 @@ void QLambda::train(const VectorXd & features, const int & action, const double 
 	Eigen::VectorXd z(numFeatures);
 	for(int i=0;i<numFeatures;i++)
 		z[i] = 1;
-	e.segment(numFeatures*action, numFeatures) = e.segment(numFeatures*action, numFeatures) + z;
+	e.segment(numFeatures*action, numFeatures) = e.segment(numFeatures*action, numFeatures) + features;
 
 	// Update the q-estimate (w)
 	// @TODO	@TODO	@TODO	@TODO	@TODO	@TODO	@TODO @TODO	@TODO

@@ -2,6 +2,14 @@ Goodparams
 Qlambda:
 
 GridWorld:
+Selection: 0
+Enter alpha: 0.5
+Enter lambda: 0.3
+Enter epsilon: 0.01
+Enter gamma: 1
+Enter number of trials to run: 100
+Enter the number of episodes per trial: 400
+
 Enter alpha: 0.95
 Enter lambda: 0.3
 Enter epsilon: 0.001
@@ -10,13 +18,181 @@ Enter number of trials to run: 300
 Enter the number of episodes per trial: 70
 
 
+
+
 Mountain Car:
 Selection: 1
 Enter Fourier basis order: 2
-Enter alpha: 0.95
+Enter alpha: 0.001
+Enter lambda: 0.1
+Enter epsilon: 0.01
+Enter gamma: 1
+Enter number of trials to run: 100
+Enter the number of episodes per trial: 300
+Running...
+Results printed to file.
+
+
+CART POLE:
+Selection: 2
+Enter Fourier basis order: 2
+Enter alpha: 0.1
+Enter lambda: 0.1
+Enter epsilon: 0.01
+Enter gamma: 0.5
+Enter number of trials to run: 100
+Enter the number of episodes per trial: 500
+Running...
+Results printed to file
+
+
+Acrobat:
+Selection: 3
+Enter Fourier basis order: 2
+Enter alpha: 0.001
+Enter lambda: 0.1
+Enter epsilon: 0.01
+Enter gamma: 1
+Enter number of trials to run: 100
+Enter the number of episodes per trial: 100
+Running...
+
+
+
+
+ACTOR CRITIC: 
+Selection: Grid World
+Enter alpha (actor): 0.7
+Enter alpha (critic): 0.9
 Enter lambda: 0.3
-Enter epsilon: 0.001
+Enter gamma: 1
+Enter number of trials to run: 100
+Enter the number of episodes per trial: 100
+Running...
+Results printed to file.
+
+Selection: 1
+Enter Fourier basis order: 1
+Enter alpha (actor): 0.1
+Enter alpha (critic): 0.8
+Enter lambda: 0.01
+Enter gamma: 0.8
+Enter number of trials to run: 300
+Enter the number of episodes per trial: 200
+Running...
+Results printed to file.
+
+
+
+
+/*
+Enter Fourier basis order: 1
+Enter alpha (actor): 0.4
+Enter alpha (critic): 0.7
+Enter lambda: 0.5
+Enter gamma: 0.8 
+Enter number of trials to run: 100
+Enter the number of episodes per trial: 20
+Running...
+Results printed to file.
+Selection: 1
+Enter Fourier basis order: 1
+Enter alpha (actor): 0.2
+Enter alpha (critic): 0.7
+Enter lambda: 0.01
+Enter gamma: 0.8
+Enter number of trials to run: 300
+Enter the number of episodes per trial: 50
+Running...
+Results printed to file.*/
+
+
+
+Cart Pole
+Enter Fourier basis order: 3
+Enter alpha (actor): 0.1
+Enter alpha (critic): 0.2
+Enter lambda: 0.5
+Enter gamma: 0.6
+Enter number of trials to run: 199
+Enter the number of episodes per trial: 80
+Running...
+Results printed to file.
+
+
+Selection: 3
+Enter Fourier basis order: 3
+Enter alpha (actor): 0.4
+Enter alpha (critic): 0.8
+Enter lambda: 0.2
+Enter gamma: 1
+Enter number of trials to run: 10
+Enter the number of episodes per trial: 50
+
+
+Selection: 3
+Enter Fourier basis order: 4
+Enter alpha (actor): 0.01
+Enter alpha (critic): 0.5
+Enter lambda: 0.4
+Enter gamma: 1
+Enter number of trials to run: 10
+Enter the number of episodes per trial: 30
+
+Selection: 3 
+Enter Fourier basis order: 3 
+Enter alpha (actor): 0.001
+Enter alpha (critic): 0.2
+Enter lambda: 0.1
+Enter gamma: 1
+Enter number of trials to run: 4
+Enter the number of episodes per trial: 40
+
+
+
+REINFORCE:
+
+
+Enter alpha (actor): 0.001 
+Enter alpha (baseline): 0.0001
+Enter gamma: 0.3
+Enter number of trials to run: 300
+Enter the number of episodes per trial: 300
+Running...
+Results printed to file.
+
+
+Selection: 0
+Enter alpha (actor): 0.8
+Enter alpha (baseline): 0.5
+Enter gamma: 1
+Enter number of trials to run: 200
+Enter the number of episodes per trial: 80
+Running...
+Results printed to file.
+Enter alpha (actor): 0.9
+Enter alpha (baseline): 0.001
 Enter gamma: 1
 Enter number of trials to run: 300
-Enter the number of episodes per trial: 70
+Enter the number of episodes per trial: 120
+Running...
+Results printed to file.
 
+Enter alpha (actor): 0.000001
+Enter alpha (baseline): 0.00001
+Enter gamma: 0.6
+Enter number of trials to run: 500
+Enter the number of episodes per trial: 200
+
+
+
+CART POLE:
+Selection: 2
+Enter Fourier basis order: 3
+Enter alpha (actor): 0.001
+Enter alpha (baseline): 0.0001
+Enter gamma: 0.6
+Enter number of trials to run: 100
+Enter the number of episodes per trial: 80
+Running...
+Results printed to file.
