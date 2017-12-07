@@ -1,0 +1,71 @@
+GRiDWORLD
+Enter alpha (actor): 0.001
+Enter alpha (baseline): 0.01
+Enter gamma: 1
+Enter number of trials to run: 100
+Enter the number of episodes per trial: 1000
+Running...
+Results printed to file.
+
+Mountain Car:
+Enter Fourier basis order: 4
+Enter alpha (actor): 0.9 
+Enter alpha (baseline): 0.001
+Enter gamma: 01 
+Enter number of trials to run: 10
+Enter the number of episodes per trial: 200
+
+
+
+CART POLE:
+Selection: 2
+Enter Fourier basis order: 4
+Enter alpha (actor): 0.00008
+Enter alpha (baseline): 0.2
+Enter gamma: 0.9
+Enter number of trials to run: 100
+Enter the number of episodes per trial: 300
+
+
+
+
+Selection: 2
+Enter Fourier basis order: 3
+Enter alpha (actor): 0.0007
+Enter alpha (baseline): 0.2
+Enter gamma: 0.9
+Enter number of trials to run: 100
+Enter the number of episodes per trial: 300
+
+
+Acrobat:
+
+Selection: 3
+Enter Fourier basis order: 3
+Enter alpha (actor): 0.0000009
+Enter alpha (baseline): 0.4
+Enter gamma: 1
+Enter number of trials to run: 10
+Enter the number of episodes per trial: 300
+Running...
+Results printed to file.
+Selection: 1
+Enter Fourier basis order: 3
+Enter alpha (actor): 0.000009
+Enter alpha (baseline): 0.4
+Enter gamma: 1
+Enter number of trials to run: 10
+Enter the number of episodes per trial: 300
+Running...
+Results printed to file.
+
+
+Enter Fourier basis order: 3
+Enter alpha (actor): 0.9
+Enter alpha (baseline): 0.7
+Enter gamma: 0.9
+Enter number of trials to run: 10
+Enter the number of episodes per trial: 200
+Running...
+Results printed to file.
+

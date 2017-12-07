@@ -53,6 +53,16 @@ Enter number of trials to run: 200
 Enter the number of episodes per trial: 300
 
 
+
+Enter Fourier basis order: 2
+Enter alpha: 0.001
+Enter lambda: 0.05
+Enter epsilon: 0.01
+Enter gamma: 1
+Enter number of trials to run: 120
+Enter the number of episodes per trial: 300
+
+
 Selection: 3
 Enter Fourier basis order: 2
 Enter alpha: 0.001
