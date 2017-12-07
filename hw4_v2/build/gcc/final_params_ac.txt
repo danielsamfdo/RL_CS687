@@ -1,0 +1,41 @@
+Selection: 0
+Enter alpha (actor): 0.4
+Enter alpha (critic): 0.9
+Enter lambda: .3
+Enter gamma: 1
+Enter number of trials to run: 100
+Enter the number of episodes per trial: 300
+Running...
+Results printed to file.\\\
+
+
+
+Selection: 1
+Enter Fourier basis order: 1
+Enter alpha (actor): 0.1
+Enter alpha (critic): 0.8
+Enter lambda: 0.01
+Enter gamma: 0.8
+Enter number of trials to run: 100
+Enter the number of episodes per trial: 200
+
+Selection: 2
+Enter Fourier basis order: 3
+Enter alpha (actor): 0.001
+Enter alpha (critic): 0.001
+Enter lambda: 0.1
+Enter gamma: 0.9
+Enter number of trials to run: 100
+Enter the number of episodes per trial: 100
+
+
+
+
+Selection: 3
+Enter Fourier basis order: 3
+Enter alpha (actor): 0.0001
+Enter alpha (critic): 0.01
+Enter lambda: 0.3
+Enter gamma: 1
+Enter number of trials to run: 100
+Enter the number of episodes per trial: 100

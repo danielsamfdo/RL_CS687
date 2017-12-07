@@ -1,0 +1,85 @@
+Select Agent:
+[0] Q(lambda)
+[1] Actor-Critic
+[2] REINFORCE
+[3] Exit
+Selection: 0
+Select Environment:
+[0] Gridworld
+[1] Mountain Car
+[2] Cart Pole
+[3] Acrobot
+[4] Exit
+Selection: 0
+Enter alpha: 0.5
+Enter lambda: 0.3
+Enter epsilon: 0.01
+Enter gamma: 1
+Enter number of trials to run: 200
+Enter the number of episodes per trial: 400
+Running...
+Results printed to file.
+
+Select Agent:
+[0] Q(lambda)
+[1] Actor-Critic
+[2] REINFORCE
+[3] Exit
+Selection: 0
+Select Environment:
+[0] Gridworld
+[1] Mountain Car
+[2] Cart Pole
+[3] Acrobot
+[4] Exit
+Selection: 1
+Enter Fourier basis order: 2
+Enter alpha: 0.001
+Enter lambda: 0.1
+Enter epsilon: 0.01
+Enter gamma: 1
+Enter number of trials to run: 200
+Enter the number of episodes per trial: 400
+Running...
+Results printed to file.
+
+Selection: 2
+Enter Fourier basis order: 3
+Enter alpha: 0.001
+Enter lambda: 0.07
+Enter epsilon: 0.04
+Enter gamma: 1
+Enter number of trials to run: 200
+Enter the number of episodes per trial: 300
+
+
+Selection: 3
+Enter Fourier basis order: 2
+Enter alpha: 0.001
+Enter lambda: 0.1
+Enter epsilon: 0.01
+Enter gamma: 1
+Enter number of trials to run: 200
+Enter the number of episodes per trial: 100
+Running...
+Results printed to file.
+
+
+
+
+
+
+
+
+
+**
+Selection: 2
+Enter Fourier basis order: 3
+Enter alpha: 0.001
+Enter lambda: 0.07
+Enter epsilon: 0.07
+Enter gamma: 1
+Enter number of trials to run: 20
+Enter the number of episodes per trial: 140
+Running...
+Results printed to file.
