@@ -73,7 +73,7 @@ void REINFORCE::train(const VectorXd & features, const int & action, const doubl
 		if(t==len-1){
 			returns[t] = rewardHistory[t];
 		}else{
-			returns[t] = returns[t] + (gamma*rewardHistory[t+1]);
+			returns[t] = rewardHistory[t] + (gamma*returns[t+1]);
 		}
 	}
 
