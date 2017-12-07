@@ -28,7 +28,7 @@ Enter lambda: 0.1
 Enter epsilon: 0.01
 Enter gamma: 1
 Enter number of trials to run: 100
-Enter the number of episodes per trial: 300
+Enter the number of episodes per trial: 400
 Running...
 Results printed to file.
 
